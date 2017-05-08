@@ -26,80 +26,47 @@ int main(void) {
     
     if ((left_sensor) && (right_sensor) && !(middle_sensor)) {
     
-    //move forward
-        
+    //move forward   
         PORTB=0b00001010;
-            
-        
+             
     }
 
     else if (!(left_sensor) && (right_sensor)) {
-    
-    
-    //move left
-        
-        
-        
+   
+    //move left     
         PORTB=0b00001000;
-        
-        
-
-    
-        
     }
     
     else if ((left_sensor) && !(right_sensor)) {
     
     //move right
-        
-        
         PORTB=0b00000010;
-        
     }
     
     else {
     
         if ((pleft) && (pright) && !(pmiddle)) {
             
-            //stop
-            
+            //stop 
             PORTB=0b00000000;
-            
-            
+           
         }
         
         else if (!(pleft) && (pright)) {
-            
-            
             //move left
             
-            
-            
             PORTB=0b00001000;
-            
-            
-            
-            
-            
         }
         
         else if ((pleft) && !(pright)) {
             
             //move right
-            
-            
-            PORTB=0b00000010;
-            
-        }
-
-        
-               
-    
+            PORTB=0b00000010;    
+     	}
     
     }
         if (!((left_sensor && middle_sensor && right_sensor)||(!(left_sensor) && !(middle_sensor) && !(right_sensor)))) {
-            
-        
+                    
         pleft=left_sensor;
         pmiddle=middle_sensor;
         pright=right_sensor;
@@ -107,8 +74,5 @@ int main(void) {
             }
 
     }
-
-
-
 
 }
